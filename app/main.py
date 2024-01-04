@@ -2,6 +2,7 @@ from app.config import create_db, engine
 from app.model import Base
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from app import router
 
 
 @asynccontextmanager
@@ -15,3 +16,5 @@ app = FastAPI(lifespan=lifespan)
 @app.get('/')
 async def root():
     return "Home"
+
+app.include_router(router, prefix="/dht_reading", tags=["dht_reading"])
