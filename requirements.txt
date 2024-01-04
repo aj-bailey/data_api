@@ -6,3 +6,4 @@ environs
 fastapi
 psycopg2
 typing_extensions
+typing
