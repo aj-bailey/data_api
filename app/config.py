@@ -1,6 +1,7 @@
 from environs import Env
 from sqlalchemy import create_engine, URL
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy_utils import database_exists, create_database
 
 env = Env()
 env.read_env(".env")
@@ -16,3 +17,11 @@ DATABASE_URL = URL.create(
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autflush=False, bind=engine)
+
+def create_db():
+    if database_exists(engine.url):
+        print("Database exists!")
+    else:
+        print("Creating database...")
+        create_database(engine.url)
+        print("Database created!")
