@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Path, Depends
+from fastapi import APIRouter, Depends
 from config import SessionLocal
 from sqlalchemy.orm import Session
 from app import crud
