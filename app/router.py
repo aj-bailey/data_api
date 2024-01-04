@@ -14,7 +14,7 @@ def get_db():
         db.close()
 
 
-@router.post('/dht_reading')
+@router.post('/create')
 async def create(request: RequestDHTReading, db: Session=Depends(get_db)):
     crud.create_dht_reading(db, request.parameter)
     return Response(code=200, status="OK")
