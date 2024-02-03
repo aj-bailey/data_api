@@ -17,5 +17,3 @@ class RequestDHTReading(BaseModel):
 class Response(GenericModel, Generic[T]):
     code: str
     status: str
-    message: str
-    response: Optional[T]

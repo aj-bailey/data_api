@@ -2,11 +2,12 @@ from app.config import create_db, engine
 from app.model import Base
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from app import router
+from app.router import router
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    print("creating DB")
     create_db()
     Base.metadata.create_all(bind=engine)
     yield

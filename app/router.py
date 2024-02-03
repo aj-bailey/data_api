@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, Path, Depends
-from config import SessionLocal
+from app.config import SessionLocal
 from sqlalchemy.orm import Session
 from app import crud
 from app.schema import DHTReadingSchema, RequestDHTReading, Response
@@ -16,5 +16,6 @@ def get_db():
 
 @router.post('/create')
 async def create(request: RequestDHTReading, db: Session=Depends(get_db)):
+    print(request.parameter)
     crud.create_dht_reading(db, request.parameter)
     return Response(code=200, status="OK")
