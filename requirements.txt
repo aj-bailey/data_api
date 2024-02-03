@@ -7,3 +7,6 @@ fastapi
 psycopg2
 typing_extensions
 typing
+pydantic<2
+pandas
+matplotlib

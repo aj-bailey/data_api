@@ -16,7 +16,7 @@ DATABASE_URL = URL.create(
     ).render_as_string(hide_password=False)
 
 engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def create_db():
     if database_exists(engine.url):
