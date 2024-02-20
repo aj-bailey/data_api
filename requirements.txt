@@ -10,3 +10,4 @@ typing
 pydantic<2
 pandas
 matplotlib
+boto3
