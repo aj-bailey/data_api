@@ -1,7 +1,7 @@
-from environs import Env
-import psycopg2
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
+import psycopg2
+from environs import Env
 
 env = Env()
 env.read_env(".env")

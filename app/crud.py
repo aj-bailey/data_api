@@ -1,6 +1,7 @@
+from sqlalchemy.orm import Session
+
 from app.model import DHTReading
 from app.schema import DHTReadingSchema
-from sqlalchemy.orm import Session
 
 
 def create_dht_reading(db: Session, dht_reading: DHTReadingSchema):

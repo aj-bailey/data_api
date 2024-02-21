@@ -1,7 +1,9 @@
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI
+
 from app.config import create_db, engine
 from app.model import Base
-from contextlib import asynccontextmanager
-from fastapi import FastAPI
 from app.router import router
 
 

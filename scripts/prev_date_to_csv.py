@@ -1,7 +1,8 @@
-from environs import Env
+from datetime import datetime, timedelta
+
 import pandas as pd
 import psycopg2
-from datetime import datetime, timedelta
+from environs import Env
 
 env = Env()
 env.read_env(".env")

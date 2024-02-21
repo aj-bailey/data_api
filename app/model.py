@@ -1,8 +1,8 @@
 from datetime import datetime
-from typing_extensions import Annotated
 
-from sqlalchemy import BIGINT, FLOAT, func, Integer, TIMESTAMP
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, declared_attr
+from sqlalchemy import BIGINT, FLOAT, TIMESTAMP, Integer, func
+from sqlalchemy.orm import DeclarativeBase, Mapped, declared_attr, mapped_column
+from typing_extensions import Annotated
 
 INT_PK = Annotated[
     int,

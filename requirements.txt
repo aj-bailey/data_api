@@ -12,3 +12,4 @@ pandas
 matplotlib
 boto3
 flake8
+isort

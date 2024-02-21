@@ -1,6 +1,7 @@
-import boto3
-from datetime import datetime, timedelta
 import os
+from datetime import datetime, timedelta
+
+import boto3
 
 today = datetime.now()
 today_str = today.strftime('%Y-%m-%d')

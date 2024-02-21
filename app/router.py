@@ -1,6 +1,7 @@
-from fastapi import APIRouter, Depends
 from config import SessionLocal
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
+
 from app import crud
 from app.schema import RequestDHTReading, Response
 
