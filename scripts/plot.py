@@ -20,7 +20,7 @@ try:
     cursor = conn.cursor()
     cursor.execute(query)
     data = cursor.fetchall()
-    
+
     columns = ["created_at", "humidity", "temperature"]
     df = pd.DataFrame(data, columns=columns)
     df["created_at"] = pd.to_datetime(df["created_at"])
@@ -48,7 +48,7 @@ try:
 
     # Adjust subplot spacing
     plt.tight_layout()
-    
+
     plt.show()
 except (Exception, psycopg2.Error) as error:
     print("Error:", error)

@@ -1,8 +1,9 @@
 from pydantic import BaseModel, Field
 from pydantic.generics import GenericModel
-from typing import Generic, Optional, TypeVar
+from typing import Generic, TypeVar
 
 T = TypeVar('T')
+
 
 class DHTReadingSchema(BaseModel):
     humidity: float
@@ -11,8 +12,10 @@ class DHTReadingSchema(BaseModel):
     class Config:
         orm_mode = True
 
+
 class RequestDHTReading(BaseModel):
     parameter: DHTReadingSchema = Field(...)
+
 
 class Response(GenericModel, Generic[T]):
     code: str
