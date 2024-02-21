@@ -11,3 +11,4 @@ pydantic<2
 pandas
 matplotlib
 boto3
+flake8
