@@ -14,21 +14,23 @@ db_params = {
     "password": env.str("POSTGRES_PASSWORD")
 }
 
-today = datetime.now()
-today_str = today.strftime('%Y-%m-%d')
-yesterday = today - timedelta(days=1)
-yesterday_str = yesterday.strftime('%Y-%m-%d')
+def prev_date_to_csv():
+    today = datetime.now()
+    today_str = today.strftime('%Y-%m-%d')
+    yesterday = today - timedelta(days=1)
+    yesterday_str = yesterday.strftime('%Y-%m-%d')
 
-query = f"SELECT * FROM dhtreadings WHERE created_at::date = '{yesterday_str}'"
+    query = f"SELECT * FROM dhtreadings WHERE created_at::date = '{yesterday_str}'"
 
-try:
-    conn = psycopg2.connect(**db_params)
-    df = pd.read_sql_query(query, conn, index_col='id')
-    df.to_csv(f"/home/adam.bailey/Desktop/apps/data_api/scripts/{yesterday_str}_data.csv")
+    try:
+        conn = psycopg2.connect(**db_params)
+        df = pd.read_sql_query(query, conn, index_col='id')
+        df.to_csv(f"/home/adam.bailey/Desktop/apps/data_api/scripts/{yesterday_str}_data.csv")
+        print(f"Saved {yesterday_str} data to csv")
 
-except (Exception, psycopg2.Error) as error:
-    print("Error:", error)
+    except (Exception, psycopg2.Error) as error:
+        print("Error:", error)
 
-finally:
-    if conn:
-        conn.close()
+    finally:
+        if conn:
+            conn.close()
