@@ -8,7 +8,6 @@ from sqlalchemy_utils import create_database, database_exists
 from scripts.prev_date_to_csv import prev_date_to_csv
 from scripts.upload_csv_data import upload_prev_date_data
 
-
 env = Env()
 env.read_env(".env")
 

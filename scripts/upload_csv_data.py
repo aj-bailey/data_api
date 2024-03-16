@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 
 import boto3
 
+
 def upload_prev_date_data():
     today = datetime.now()
     today_str = today.strftime('%Y-%m-%d')
