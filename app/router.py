@@ -1,8 +1,8 @@
-from config import SessionLocal
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app import crud
+from app.config import SessionLocal
 from app.schema import RequestDHTReading, Response
 
 router = APIRouter()

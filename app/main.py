@@ -18,6 +18,7 @@ async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
     
     scheduler.add_job(upload_prev_date_data, CronTrigger(hour=16, minute=15))
+    print("Added upload_prev_date_data to run daily at 00:30")
     scheduler.start()
     yield
 
