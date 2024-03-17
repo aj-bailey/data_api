@@ -2,7 +2,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from app.config import create_db, engine, schedule_jobs
+from app.background_jobs import schedule_jobs
 from app.model import Base
 from app.router import router
 
