@@ -15,3 +15,5 @@ def prev_date_to_csv():
 
     df = pd.read_sql(stmt, SessionLocal().bind)
     df.to_csv(f"/home/adam.bailey/Desktop/apps/data_api/scripts/{yesterday.date()}_data.csv")
+
+    print(f"{yesterday.date()} temp/humidity data saved to csv!")
